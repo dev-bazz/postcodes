@@ -1,0 +1,14 @@
+@use "./func.scss" as *;
+
+$containers: (
+	lg: px-to-rem(1240px),
+	md: px-to-rem(1144px),
+);
+
+// common device break point
+$breakpoints: (
+	desktop: 1472px,
+	tablet: 768px,
+	mobile: 320px,
+	mobileLandscape: 568px,
+);

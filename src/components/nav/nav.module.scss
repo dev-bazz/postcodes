@@ -1,0 +1,39 @@
+@use "../../sass/index.scss" as *;
+
+$padding: px-to-rem(16px);
+
+.nav {
+	max-width: calc(map-get($containers, lg) - 16px);
+	margin: auto;
+	padding-inline: $padding;
+	padding-top: px-to-rem(40px);
+
+	.top {
+		display: flex;
+		gap: px-to-rem(16px);
+		align-items: center;
+	}
+
+	.logo {
+		max-width: 210px;
+		@include custom-media-query("mobile", map-get($breakpoints, tablet)) {
+			max-width: 150px;
+		}
+	}
+
+	.help {
+		margin-left: auto;
+		font-weight: 600;
+		align-self: center;
+		font-size: 16px;
+		gap: 8px;
+		display: flex;
+		align-items: center;
+
+		.circle {
+			padding: px-to-rem(2px, 1em) px-to-rem(10px, 1em);
+			border-radius: 50px;
+			border: 2px solid black;
+		}
+	}
+}
