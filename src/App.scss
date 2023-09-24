@@ -1,0 +1,30 @@
+@use "./sass/index.scss" as *;
+
+.hero {
+	background: url(./assets/heroPostcode.webp) no-repeat center;
+	background-size: cover;
+
+	&Wrapper {
+		max-width: calc(map-get($containers, md) - 16px);
+		margin: auto;
+		display: grid;
+		min-height: px-to-rem(400px);
+		align-items: center;
+	}
+	color: white;
+
+	h1 {
+		display: flex;
+		flex-direction: column;
+		text-transform: uppercase;
+
+		span:nth-child(1) {
+			font-size: px-to-rem(20px);
+			font-weight: 200;
+		}
+
+		span:nth-child(2) {
+			font-size: px-to-rem(34px);
+		}
+	}
+}

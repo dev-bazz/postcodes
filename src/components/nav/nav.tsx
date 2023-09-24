@@ -1,11 +1,22 @@
 import styles from "./nav.module.scss";
 import navLogo from "./assets/logocheck.png";
+import { DropDown } from "./components";
+import { navBarProp } from "./types";
 
-export interface navProps {
-	prop?: string;
-}
-
-export function Nav() {
+export function Nav({
+	menuItems = [
+		{
+			navName: "Postcode Lists",
+			dropDown: [{ name: "By Country" }, { name: "By Introduction Date" }],
+		},
+		{
+			navName: "Postcode Maps",
+			dropDown: [{ name: "default" }, { name: "default" }],
+		},
+		{ navName: "Nearest Postcode" },
+		{ navName: "Postcode Lottery" },
+	],
+}: navBarProp) {
 	return (
 		<nav className={styles.nav}>
 			<div className={styles.top}>
@@ -19,6 +30,16 @@ export function Nav() {
 					<span className={styles.circle}>?</span>
 					<span>Help</span>
 				</div>
+			</div>
+			<div className={styles.bottom}>
+				<ul className={styles.menuWrapper}>
+					{menuItems.map((item, key) => (
+						<DropDown
+							key={key}
+							menu={item}
+						/>
+					))}
+				</ul>
 			</div>
 		</nav>
 	);

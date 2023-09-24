@@ -12,28 +12,40 @@ $padding: px-to-rem(16px);
 		display: flex;
 		gap: px-to-rem(16px);
 		align-items: center;
-	}
 
-	.logo {
-		max-width: 210px;
-		@include custom-media-query("mobile", map-get($breakpoints, tablet)) {
-			max-width: 150px;
+		.logo {
+			max-width: 210px;
+			@include custom-media-query("mobile", map-get($breakpoints, tablet)) {
+				max-width: 150px;
+			}
+		}
+
+		.help {
+			margin-left: auto;
+			font-weight: 600;
+			align-self: center;
+			font-size: 16px;
+			gap: 8px;
+			display: flex;
+			align-items: center;
+			cursor: pointer;
+			.circle {
+				padding: px-to-rem(1px, 1em) px-to-rem(8px, 1em);
+				border-radius: 50px;
+				border: 2px solid black;
+			}
 		}
 	}
 
-	.help {
-		margin-left: auto;
-		font-weight: 600;
-		align-self: center;
-		font-size: 16px;
-		gap: 8px;
+	.bottom {
+		max-width: px-to-rem(794px);
+		margin: auto;
+		margin-top: px-to-rem(40px);
+	}
+
+	.menuWrapper {
 		display: flex;
-		align-items: center;
-
-		.circle {
-			padding: px-to-rem(2px, 1em) px-to-rem(10px, 1em);
-			border-radius: 50px;
-			border: 2px solid black;
-		}
+		justify-content: space-between;
+		gap: px-to-rem(16px);
 	}
 }

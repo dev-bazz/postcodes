@@ -1,0 +1,35 @@
+@use "../../../../sass/index.scss" as *;
+.DropDown {
+	color: hsla(21, 4%, 44%, 1);
+	position: relative;
+
+	&:hover .menuChildren {
+		display: flex;
+		flex-direction: column;
+		gap: px-to-rem(12px);
+	}
+}
+
+.menuLabel {
+	display: flex;
+	padding: px-to-rem(8px) 0;
+	padding-right: px-to-rem(20px);
+}
+
+.menuChildren {
+	position: absolute;
+	display: none;
+	background-color: #fff;
+
+	li {
+		cursor: pointer;
+	}
+
+	max-width: px-to-rem(206px);
+	padding: px-to-rem(16px) px-to-rem(16px);
+	border-top: 2px solid var(--Primary-Blue, #008cba);
+	box-shadow: 0px 20px 25px -5px rgba(16, 24, 40, 0.1),
+		0px 8px 10px -6px rgba(16, 24, 40, 0.05);
+	border-radius: 0px 0px 8px 8px;
+	width: 100%;
+}
