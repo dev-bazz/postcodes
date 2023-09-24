@@ -10,6 +10,7 @@
 		display: grid;
 		min-height: px-to-rem(400px);
 		align-items: center;
+		padding-inline: px-to-rem(16px);
 	}
 	color: white;
 
@@ -25,6 +26,36 @@
 
 		span:nth-child(2) {
 			font-size: px-to-rem(34px);
+			@include custom-media-query("mobile", map-get($breakpoints, tablet)) {
+				font-size: px-to-rem(28px);
+			}
+		}
+	}
+}
+
+.advertArea {
+	position: relative;
+	min-height: px-to-rem(418px);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+
+	.search {
+		min-height: px-to-rem(218px);
+		box-shadow: 0px 20px 25px -5px rgba(16, 24, 40, 0.1),
+			0px 8px 10px -6px rgba(16, 24, 40, 0.05);
+		max-width: calc(map-get($containers, md) - 56px);
+		background-color: #fff;
+		border-radius: 8px;
+		position: absolute;
+		width: 88vw;
+		width: 88dvw;
+		justify-self: center;
+		transform: translateY(px-to-rem(-84px));
+		padding: px-to-rem(20px);
+
+		@include custom-media-query("mobile", map-get($breakpoints, tablet)) {
+			background-color: #ffffff;
 		}
 	}
 }

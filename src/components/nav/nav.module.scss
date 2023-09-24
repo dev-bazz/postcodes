@@ -12,6 +12,9 @@ $padding: px-to-rem(16px);
 		display: flex;
 		gap: px-to-rem(16px);
 		align-items: center;
+		@include custom-media-query("mobile", map-get($breakpoints, tablet)) {
+			padding-block: px-to-rem(24px);
+		}
 
 		.logo {
 			max-width: 210px;
@@ -41,6 +44,10 @@ $padding: px-to-rem(16px);
 		max-width: px-to-rem(794px);
 		margin: auto;
 		margin-top: px-to-rem(40px);
+
+		@include custom-media-query("mobile", map-get($breakpoints, tablet)) {
+			display: none;
+		}
 	}
 
 	.menuWrapper {
