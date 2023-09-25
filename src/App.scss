@@ -48,14 +48,96 @@
 		background-color: #fff;
 		border-radius: 8px;
 		position: absolute;
-		width: 88vw;
-		width: 88dvw;
+		width: 80vw;
+		width: 80dvw;
 		justify-self: center;
 		transform: translateY(px-to-rem(-84px));
-		padding: px-to-rem(20px);
+		padding-inline: px-to-rem(20px);
+		padding-block: px-to-rem(20px);
 
 		@include custom-media-query("mobile", map-get($breakpoints, tablet)) {
 			background-color: #ffffff;
+			padding: px-to-rem(20px);
+		}
+	}
+
+	.radios {
+		display: flex;
+		gap: px-to-rem(40px);
+		margin-top: px-to-rem(50px);
+
+		input[type="radio"] {
+			accent-color: black;
+		}
+	}
+
+	.query {
+		margin-top: px-to-rem(40px);
+		display: flex;
+
+		gap: px-to-rem(16px);
+
+		.icon {
+			max-height: px-to-rem(24px);
+		}
+
+		.searchContainer {
+			background-color: hsla(220, 26%, 96%, 1);
+			display: flex;
+			align-items: center;
+			padding: px-to-rem(16px) px-to-rem(8px) px-to-rem(16px) px-to-rem(16px);
+			max-width: px-to-rem(694px);
+			flex: 1.4;
+			border-radius: px-to-rem(8px);
+			height: px-to-rem(38px);
+
+			.btnSearch {
+				background-color: hsla(195, 100%, 36%, 1);
+				padding: px-to-rem(16px) px-to-rem(32px);
+				border: none;
+				color: white;
+				border-radius: px-to-rem(8px);
+				transition: all 0.2s ease-out;
+				cursor: pointer;
+
+				&:active {
+					scale: 0.8;
+					background-color: darken(
+						$color: hsla(195, 100%, 36%, 1),
+						$amount: 10
+					);
+				}
+			}
+
+			input {
+				all: unset;
+				flex: 1;
+				padding: 0 px-to-rem(10px);
+			}
+		}
+
+		.selectContainer {
+			display: flex;
+			position: relative;
+			flex: 0.6;
+		}
+		.select {
+			appearance: none;
+
+			padding: px-to-rem(12px);
+			border: 1px solid hsla(21, 3%, 58%, 1);
+			accent-color: hsla(21, 3%, 58%, 1);
+			border-radius: px-to-rem(8px);
+			font-size: px-to-rem(18px);
+			width: 100%;
+
+			&:placeholder-shown {
+				font-size: px-to-rem(18px);
+			}
+
+			&:focus {
+				border: 1px solid hsla(21, 3%, 58%, 1);
+			}
 		}
 	}
 }
