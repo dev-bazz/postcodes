@@ -26,7 +26,10 @@
 
 		span:nth-child(2) {
 			font-size: px-to-rem(34px);
-			@include custom-media-query("mobile", map-get($breakpoints, tablet)) {
+			@include custom-media-query(
+				"mobile",
+				map-get($breakpoints, tablet)
+			) {
 				font-size: px-to-rem(28px);
 			}
 		}
@@ -55,7 +58,10 @@
 		padding-inline: px-to-rem(20px);
 		padding-block: px-to-rem(20px);
 
-		@include custom-media-query("mobile", map-get($breakpoints, tablet)) {
+		@include custom-media-query(
+			"mobile",
+			map-get($breakpoints, tablet)
+		) {
 			background-color: #ffffff;
 			padding: px-to-rem(20px);
 		}
@@ -85,7 +91,8 @@
 			background-color: hsla(220, 26%, 96%, 1);
 			display: flex;
 			align-items: center;
-			padding: px-to-rem(16px) px-to-rem(8px) px-to-rem(16px) px-to-rem(16px);
+			padding: px-to-rem(16px) px-to-rem(8px) px-to-rem(16px)
+				px-to-rem(16px);
 			max-width: px-to-rem(694px);
 			flex: 1.4;
 			border-radius: px-to-rem(8px);
@@ -151,6 +158,9 @@
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
+		background: #ffc64f;
+		padding: 4px;
+		border-radius: 4px;
 
 		.advertInputs {
 			display: flex;
@@ -166,9 +176,7 @@
 
 	.advert {
 		width: px-to-rem(781px);
-		background: #ffc64f;
-		padding: 4px;
-		border-radius: 4px;
+		padding-bottom: px-to-rem(20px);
 
 		.btn {
 			background: #008cba;
@@ -176,6 +184,7 @@
 			border: 1px solid #fff;
 			color: #fff;
 			transition: scale 0.2s ease-in-out;
+			border-radius: px-to-rem(4px);
 			&:active {
 				background-color: darken($color: #008cba, $amount: 8);
 				scale: 0.8;
@@ -184,5 +193,67 @@
 	}
 	.guest {
 		padding-inline: px-to-rem(20px);
+		color: #c9960c;
+		display: flex;
+		font-size: 14px;
+		font-style: normal;
+		font-weight: 400;
+		line-height: normal;
+		gap: px-to-rem(8px);
+		align-items: center;
+	}
+	.bottom {
+		background-color: #fff;
+		display: flex;
+		gap: px-to-rem(8px);
+		padding-block: px-to-rem(8px);
+	}
+	.image {
+		aspect-ratio: 96 / 101;
+		max-width: px-to-rem(192px);
+
+		p {
+			text-align: right;
+			color: #979390;
+			font-size: 14px;
+			font-style: normal;
+
+			line-height: normal;
+			letter-spacing: -0.4px;
+			padding-block: px-to-rem(8px);
+		}
+	}
+
+	.images {
+		display: flex;
+		gap: px-to-rem(8px);
+		flex: 1;
+	}
+	.countries {
+		display: flex;
+		flex-direction: column;
+		flex: 0.3;
+		gap: px-to-rem(4px);
+		.btn {
+			align-self: center;
+			background: #008cba;
+			padding: 9.5px 24px;
+			width: 100%;
+			border: 1px solid #fff;
+			color: #fff;
+			transition: scale 0.2s ease-in-out;
+			border-radius: px-to-rem(4px);
+			&:active {
+				background-color: darken($color: #008cba, $amount: 8);
+				scale: 0.8;
+			}
+		}
+
+		ul {
+			margin: 0;
+			border-radius: px-to-rem(4px);
+			background: #edf1f6;
+			padding: px-to-rem(4px);
+		}
 	}
 }
