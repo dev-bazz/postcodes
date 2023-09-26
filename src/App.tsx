@@ -4,6 +4,9 @@ import { Nav } from "./components";
 
 function App() {
 	const { register, handleSubmit } = useForm();
+
+	const test = import.meta.env.VITE_TEST;
+	console.log(test);
 	return (
 		<>
 			<Nav />
@@ -18,60 +21,83 @@ function App() {
 				</div>
 			</section>
 			<section className="advertArea">
-				<form
-					onSubmit={handleSubmit((data) => console.log(data))}
-					className="search">
-					<div className="radios">
-						<div className="radio">
-							<input
-								value={"Check My Postcode"}
-								id="radio1"
-								type="radio"
-								{...register("radio", { value: "Check My Postcode" })}
-							/>
-							<label htmlFor="radio1">Check My Postcode</label>
+				<div className="advertForm">
+					<form
+						onSubmit={handleSubmit((data) => console.log(data))}
+						className="search">
+						<div className="radios">
+							<div className="radio">
+								<input
+									value={"Check My Postcode"}
+									id="radio1"
+									type="radio"
+									{...register("radio", {
+										value: "Check My Postcode",
+									})}
+								/>
+								<label htmlFor="radio1">Check My Postcode</label>
+							</div>
+							<div className="radio">
+								<input
+									id="radio2"
+									type="radio"
+									value={"locate Me"}
+									{...register("radio")}
+								/>
+								<label htmlFor="radio2">Locate Me</label>
+							</div>
 						</div>
-						<div className="radio">
-							<input
-								id="radio2"
-								type="radio"
-								value={"locate Me"}
-								{...register("radio")}
-							/>
-							<label htmlFor="radio2">Locate Me</label>
+						<div className="query">
+							<div className="searchContainer">
+								<span className="icon">
+									<SearchIcon />
+								</span>
+								<input
+									placeholder="Address, Country, City or Postcode..."
+									type="text"
+								/>
+								<button className="btnSearch">Search</button>
+							</div>
+							<div className="selectContainer">
+								<select
+									className="select"
+									{...register("selected", {
+										value: "select",
+									})}
+									placeholder="Select">
+									<option
+										value="select"
+										disabled>
+										Select/Province
+									</option>
+									<option value="lagos">lagos</option>
+									<option value="abuja">abuja</option>
+									<option value="benin">benin</option>
+									<option value="kano">kano</option>
+								</select>
+							</div>
 						</div>
-					</div>
-					<div className="query">
-						<div className="searchContainer">
-							<span className="icon">
-								<SearchIcon />
-							</span>
+					</form>
+				</div>
+				<div className="advert">
+					<div className="advertTop">
+						<div className="advertInputs">
 							<input
-								placeholder="Address, Country, City or Postcode..."
 								type="text"
+								placeholder="e.g. city, region, district..."
 							/>
-							<button className="btnSearch">Search</button>
+							<input
+								type="month"
+								value={"2023-01"}
+							/>
+							<button className="btn">Submit</button>
 						</div>
-						<div className="selectContainer">
-							<select
-								className="select"
-								{...register("selected", {
-									value: "select",
-								})}
-								placeholder="Select">
-								<option
-									value="select"
-									disabled>
-									Select/Province
-								</option>
-								<option value="lagos">lagos</option>
-								<option value="abuja">abuja</option>
-								<option value="benin">benin</option>
-								<option value="kano">kano</option>
-							</select>
+						<div className="guest">
+							<span>Guest</span>
 						</div>
 					</div>
-				</form>
+					<div className=""></div>
+				</div>
 			</section>
 		</>
 	);
