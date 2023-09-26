@@ -262,3 +262,11 @@
 		}
 	}
 }
+
+.ppContainer {
+	max-width: calc(map-get($containers, md) - 16px);
+	padding-inline: px-to-rem(16px);
+	margin: auto;
+	margin-top: px-to-rem(100px);
+	min-height: px-to-rem(250px);
+}

@@ -95,7 +95,7 @@ function App() {
 							/>
 							<input
 								type="month"
-								value={"2023-01"}
+								{...register("date")}
 							/>
 							<button className="btn">Submit</button>
 						</div>
@@ -142,6 +142,12 @@ function App() {
 							<button className="btn">Submit</button>
 						</div>
 					</div>
+				</div>
+			</section>
+
+			<section aria-labelledby="Popular Postcode">
+				<div className="ppContainer">
+					<h2 id="Popular Postcode">Popular Postcode</h2>
 				</div>
 			</section>
 		</>
