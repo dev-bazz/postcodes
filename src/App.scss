@@ -127,10 +127,11 @@
 			display: flex;
 			position: relative;
 			flex: 0.6;
+			align-items: center;
 		}
 		.select {
 			appearance: none;
-
+			align-self: normal;
 			padding: px-to-rem(12px);
 			border: 1px solid hsla(21, 3%, 58%, 1);
 			accent-color: hsla(21, 3%, 58%, 1);
@@ -145,6 +146,10 @@
 			&:focus {
 				border: 1px solid hsla(21, 3%, 58%, 1);
 			}
+		}
+		.drop {
+			position: absolute;
+			right: px-to-rem(24px);
 		}
 	}
 
